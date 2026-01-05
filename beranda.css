@@ -1,0 +1,50 @@
+.hero {
+  background-image: url('de fashion BG.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 620px;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0.3), transparent);
+  z-index: 1;
+}
+
+.product-img {
+  width: 100%;
+  height: 300px; /* Tinggi seragam */
+  object-fit: cover; /* Crop gambar agar tidak terdistorsi */
+  border-radius: 8px;
+  background-color: #f8f6f2; /* Warna latar jika gambar transparan */
+}
+
+.hero-title {
+  position: absolute;
+  bottom: 40px;            
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  text-shadow:
+    2px 2px 6px rgba(244, 239, 239, 0.8),
+    0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+footer {
+  background-color: #3a2a1a; /* abu-abu terang */
+  color: #f9f3f3; /* teks hitam */
+  padding: 20px 0;
+  text-align: center;
+  font-size: 0.9rem;
+}

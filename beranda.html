@@ -1,0 +1,101 @@
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Garet de Fashion</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet"/>
+    <link href="beranda.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="index.html">
+      <img src="de fashion logo.png" alt="Garet de Fashion" width="50" height="50" class="me-2 rounded-circle">
+      <span class="fw-bold">Garet de Fashion</span>
+    </a>
+
+    <!-- Pencarian -->
+    <form class="d-flex mx-auto" id="searchForm">
+      <input class="form-control me-2" type="search" placeholder="Cari produk fashion..." id="searchInput" />
+      <button class="btn btn-dark" type="submit"><i class="bi bi-search"></i></button>
+    </form>
+
+    <!-- Navigasi -->
+    <ul class="navbar-nav ms-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="produk.html"><i class="bi bi-shop"></i> Produk</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="keranjang.html"><i class="bi bi-cart3"></i> Keranjang</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="kontak.html"><i class="bi bi-envelope"></i> Kontak</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+  <h1 class="hero-title">Gaya Simpel, Fashion Maksimal</h1>
+</section>
+
+<!-- Produk Terbaru -->
+<section id="products" class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-4">Koleksi Produk Terbaru</h2>
+    <div class="row" id="productList">
+      <!-- Kartu produk akan dimuat lewat JavaScript -->
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer text-center py-4 mt-5">
+  <div class="container">
+    <p class="mb-1">&copy; 2025 Garet de Fashion. All rights reserved.</p>
+    <small>Ikuti kami di:
+      <a href="#" class="text-white text-decoration-underline">Instagram</a>,
+      <a href="#" class="text-white text-decoration-underline">Facebook</a>
+    </small>
+  </div>
+</footer>
+
+<!-- Script -->
+<script src="jawa.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    if (document.getElementById('productList')) renderProduk();
+  });
+
+  document.getElementById('searchForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const keyword = document.getElementById('searchInput').value.toLowerCase();
+    const cards = document.querySelectorAll('#productList .product-card');
+    let found = false;
+
+    cards.forEach(card => {
+      const title = card.querySelector('.card-title').textContent.toLowerCase();
+      const match = title.includes(keyword);
+      card.parentElement.style.display = match ? 'block' : 'none';
+      if (match) found = true;
+    });
+
+    if (found) {
+      const result = Array.from(cards).find(card =>
+        card.querySelector('.card-title').textContent.toLowerCase().includes(keyword)
+      );
+      if (result) {
+        result.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    } else {
+      alert('Produk tidak ditemukan!');
+    }
+  });
+</script>
+
+</body>
+</html>

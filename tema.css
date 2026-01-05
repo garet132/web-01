@@ -1,0 +1,85 @@
+:root {
+  --primary-color: #cbb089;         /* warna navbar: beige emas muda */
+  --secondary-color: rgba(255, 250, 240, 0.85); /* lapisan transparan lembut */
+  --accent-color: #4d3a26;          /* warna teks: coklat kopi elegan */
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--accent-color);
+  background: url('de fashion BG.png') no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* Lapisan semi-transparan untuk konten */
+main {
+  background-color: var(--secondary-color);
+  min-height: 100vh;
+  padding: 2rem;
+  backdrop-filter: blur(2px);
+  border-radius: 8px;
+  margin: 2rem auto;
+  max-width: 960px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Navbar */
+.navbar {
+  background-color: var(--primary-color);
+}
+
+.navbar-brand,
+.nav-link,
+.btn {
+  font-weight: bold;
+  color: var(--accent-color);
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+/* Produk */
+.product-img {
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.product-card {
+  border: 1px solid #dacfbf;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #fffdf9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s;
+}
+
+.product-card:hover {
+  transform: scale(1.03);
+}
+
+/* Tombol Umum */
+.btn {
+  background-color: var(--accent-color);
+  color: #fff6e8;
+  border: none;
+}
+
+.btn:hover {
+  background-color: #3a2a1a;
+}
+
+/* Footer */
+.footer {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+.footer a {
+  color: #3a2a1a;
+  text-decoration: underline;
+}
